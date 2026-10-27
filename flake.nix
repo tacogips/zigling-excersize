@@ -2,11 +2,15 @@
   description = "my zig project";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/release-23.11";
+    nixpkgs.url = "github:tacogips/nixpkgs-security/ae36ce5d71747ef2655933b315a361463ea90d82";
     flake-utils.url = "github:numtide/flake-utils";
     zig.url = "github:mitchellh/zig-overlay";
     zls.url = "github:zigtools/zls/master";
   };
+
+  # Share the patched Node.js and CA bundle across transitive development inputs.
+  inputs.zig.inputs.nixpkgs.follows = "nixpkgs";
+  inputs.zls.inputs.nixpkgs.follows = "nixpkgs";
 
   outputs =
     { self
