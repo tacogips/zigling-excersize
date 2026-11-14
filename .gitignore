@@ -1,0 +1,7 @@
+/zig-cache/
+/zig-out/
+/answers/
+/patches/healed/
+
+.direnv
+.envrc
